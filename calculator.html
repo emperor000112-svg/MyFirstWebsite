@@ -31,8 +31,9 @@
 <button>*</button>
 
 <br>
-
+<button>.</button>
 <button>0</button>
+<button>⌫</button>
 <button>C</button>
 <button>=</button>
 <button>/</button>
@@ -50,11 +51,33 @@
             else if (value === "=") {
                 display.value = eval(display.value);
             } 
+            else if (value === "⌫") {
+                display.value = display.value.slice(0, -1);
+            }
             else {
                 display.value += value;
             }
         });
     });
+    document.addEventListener("keydown", (event) => {
+    const key = event.key;
+
+   if (/[0-9.+\-*\/]/.test(key)) {
+        display.value += key;
+    }
+
+    if (key === "Enter") {
+        display.value = eval(display.value);
+    }
+
+    if (key === "Backspace") {
+        display.value = display.value.slice(0, -1);
+    }
+
+    if (key === "Escape") {
+        display.value = "";
+    }
+});
 </script>
 </body>
 </html>
