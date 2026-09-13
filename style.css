@@ -407,3 +407,34 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 0 18px rgba(34, 211, 238, 0.6);
 }
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content:centre;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 8px 12px;
+    }
+
+    .hero,
+    .about,
+    .skills,
+    .projects,
+    .contact {
+        width: 90%;
+        margin: 20px auto;
+    }
+
+    .projects {
+        grid-template-columns: 1fr;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
